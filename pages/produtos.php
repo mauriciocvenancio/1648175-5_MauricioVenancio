@@ -1,37 +1,40 @@
+<?php include "dados/dados.php"; ?>
+
+
 <div class="header-height"></div>
 
-<section class="promo-section padding bg-grey pos-rel">
-           <div class="food-1"></div>
-           <div class="food-2"></div>
+<section class="product-section padding bg-grey">
             <div class="container">
-                <div class="promo-wrap row">
-                    <div class="col-md-4 col-sm-6 xs-padding">
-                        <div class="promo-item text-center">
-                            <i class="food-icon food-iconolives"></i>
-                            <h3>Produtos</h3>
-                            <p>Organic food is food produced by methods that comply with the standards of farming.</p>
-                            <a href="about.html">Read More</a>
+               <div class="row align-items-center mb-30">
+                   <div class="col-lg-6">
+                        <div class="product-showing">
+                           
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 xs-padding">
-                        <div class="promo-item active text-center">
-                            <i class="food-icon food-iconcauliflower"></i>
-                            <h3>Biologically Safe</h3>
-                            <p>Organic food is food produced by methods that comply with the standards of farming.</p>
-                            <a href="about.html">Read More</a>
+                    <div class="col-lg-6 text-right">
+                      
+                    </div>
+               </div>
+                <div class="product-items row">
+					<?php if($produtos){foreach ($produtos as $k => $valor){ ?>
+                    <div class="col-lg-3 col-sm-6 padding-15 single-item food juice">
+                        <div class="product-item">
+                            <div class="product-thumb">
+                                <img src="<?php echo $produtos[$k]['image']; ?>" alt="img">
+                                <ul class="product-btn-group">
+                                    <li><a href="index.php?pag=4&id=<?php echo $k ?>"><i class="ti-shopping-cart-full"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product-content text-center">
+                                <h3><a href="index.php?pag=4&id=<?php echo $k ?>"><?php echo $produtos[$k]['nome']; ?></a></h3>
+                                <h4><span>R$<?php echo $produtos[$k]['valor']; ?></span><span class="old">R$<?php echo $produtos[$k]['desconto']; ?></span></h4>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 xs-padding">
-                        <div class="promo-item text-center">
-                            <i class="food-icon food-iconwatermelon"></i>
-                            <h3>Conser Diversity</h3>
-                            <p>Organic food is food produced by methods that comply with the standards of farming.</p>
-                            <a href="about.html">Read More</a>
-                        </div>
-                    </div>
+					<?php }} ?>
                 </div>
             </div>
-        </section><!--/.promo-section-->
+        </section><!--/.product-section-->
 
 <?php
 
